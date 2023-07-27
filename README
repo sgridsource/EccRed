@@ -23,7 +23,7 @@ we need scripts to fit the orbital separation to the sinusoidal curve
 d(t) = S0 + A0*t + 0.5*A1*t^2 - (B/omega)*cos(omega*t+phi).
 
 For the 1st way we have EccRed.py (see e-based eccentricity reduction in
-https://arxiv.org/abs/1507.07100)
+https://arxiv.org/abs/1507.07100).
 For the 2nd way we use EccRed_noForceBal.py (see Omega-based eccentricity
 reduction in https://arxiv.org/abs/1910.09690).
 
