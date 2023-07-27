@@ -1,0 +1,33 @@
+The new sgrid (DNSdata) can create higher mass and spin configurations, and
+may also run faster. So it should be preferred.
+
+With it there are 2 ways to reduce eccentricity:
+------------------------------------------------
+
+1. Analogous to the old sgrid (BNSdata) you run with:
+  DNSdata_adjust = forcebalance always
+and adjust:
+  DNSdata_rdot = 0
+  DNSdata_ecc  = 0
+according to what the EccRed.py script suggests. The two '0's shown here are
+only the initial values that one uses before any eccentricity reduction
+step. The value 'forcebalance' in DNSdata_adjust means that sgrid will
+constantly adjust Omega.
+
+2. You run with:
+  DNSdata_adjust = Py0
+and adjust:
+  DNSdata_rdot  = 0
+  DNSdata_Omega = estimate
+according to what the EccRed_noForceBal.py script suggests. Again the '0'
+and 'estimate' are only the initial values that one can use before any
+eccentricity reduction step. If you have a good idea what Omega should be,
+you can also use this number for DNSdata_Omega. The actual Omega sgrid uses
+can be found in DNSdata_properties.txt and BNSdata_properties.txt
+The value 'Py0' in DNSdata_adjust means that Omega never gets adjusted by
+sgrid, only the CM is moved to make the total Py=0.
+
+Generally method 2 works better, however for some unequal mass cases
+it seemed that method 1 was better, because with Py0 the CM can drift away.
+It is also possible to start with the method 1, and then to later switch
+to method 2 when we know a good approximation for DNSdata_Omega.
