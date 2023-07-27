@@ -76,9 +76,9 @@ There are few caveats worth noting:
   `bns_26_26_26` folder.
 * For BAM the parameter `eos_tab_file` must be set to the correct table
   containing the same equation of state as used by SGRID.
-* For the ETK the parameter there are various ways to choose an equation
-  of state. As in BAM, this choice should be compatible with the equation of
-  state used by SGRID.
+* For the ETK there are various ways to choose an equation of state.
+  As in BAM, this choice should be compatible with the equation of
+  state used by SGRID in the initial data construction.
 * Make sure the finest level of BAM's or ETK's mesh is big enough to
   fit the entire star diameter plus an extra 10 percent.
   One can find the diameter of each star by '|xin-xout|'.
