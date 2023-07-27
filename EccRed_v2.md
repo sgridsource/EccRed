@@ -18,8 +18,8 @@ is in the paper about the new SGRID version https://arxiv.org/abs/1910.09690.
 * New version of SGRID code (DNSdata)
 * SGRID parameter file
 * SGRID parfile needs to have: `DNSdata_adjust = Py0`
-* BAM code
-* BAM parameter file
+* BAM code or Einstein Toolkit (ETK)
+* BAM parameter file or ETK parameter file
 * Python script **EccRed_noForceBal.py**
 
 
@@ -55,27 +55,31 @@ is `parameterfile_n1_n2_n3`. Thus, if our parameter file is
 `bns.par` and the highest resolution is 26x26x26 we will have:
 `bns_26_26_26`.
 
-In order to evolve the initial data using the BAM code we need to do
-the following modification:
+In order to evolve the initial data using BAM or ETK we need to
+do the following modification:
 
 * Copy `bns.par` to `bns_26_26_26/bns_26_26_26.par`.
 * Open `bns_26_26_26/bns_26_26_26.par` and change
   `iterate_parameters = yes` to `iterate_parameters = no`.
 
 
-> *Step 3: Run BAM code*
+> *Step 3: Run BAM or ETK code*
 
 Evolve the system using the newly constructed initial data for about 3 orbits.
 There are few caveats worth noting:
 
-* The parameter `BNSdataReader_sgrid_exe` must be set to the path of the
-  SGRID executable.
-* The parameter `BNSdataReader_sgrid_datadir` must be set to the path of
+* For BAM the parameter `BNSdataReader_sgrid_exe` must be set to the path of
+  the SGRID executable.
+* The parameter `BNSdataReader_sgrid_datadir` for BAM or
+  `DNSdata::sgrid_datadir` for ETK must be set to the path of
   the highest resolution of the SGRID output, in our case the path of
   `bns_26_26_26` folder.
-* The parameter `eos_tab_file` must be set to the correct table
+* For BAM the parameter `eos_tab_file` must be set to the correct table
   containing the same equation of state as used by SGRID.
-* Make sure the finest level of BAM's mesh is big enough to
+* For the ETK the parameter there are various ways to choose an equation
+  of state. As in BAM, this choice should be compatible with the equation of
+  state used by SGRID.
+* Make sure the finest level of BAM's or ETK's mesh is big enough to
   fit the entire star diameter plus an extra 10 percent.
   One can find the diameter of each star by '|xin-xout|'.
   The values of `xin` and `xout` are at the file `BNSdata_properties.txt`
@@ -97,9 +101,11 @@ The values of `MASS`, `OMEGA`, `TIMESKIP` and `D_MIN` are found as follows:
 * The values of `OMEGA` and `MASS` are equal to the values of `Omega` and
   `M_ADM` in `BNSdata_properties.txt` located in `bns_26_26_26` folder.
 * To find the values of `TIMESKIP` and `D_MIN` we need to first Plot
-  `d-proper` versus `time` in `moving_puncture_distance.lxyz?` located in the
-  BAM output directory. Looking at the plot we observe that there are some
-  wiggles at the early times. Find when these wiggles end, this time
+  the orbital separation of our run versus time. For BAM `d-proper` versus
+  `time` is in `moving_puncture_distance.lxyz?` located in the BAM output
+  directory. For the ETK we have to look at the file ???
+  Looking at the plot we observe that there are some
+  wiggles at early times. Find when these wiggles end, this time
   is the value of `TIMESKIP`. Furthermore, find the smallest `d-proper`
   that we want to include into the fit, this gives the value of `D_MIN`.
 
