@@ -3,13 +3,13 @@
 ## There are 2 ways to reduce eccentricity:
 
 ## 1. Run sgrid with:
-DNSdata_adjust = forcebalance always
+DNSdata_adjust = forcebalance always  
 With this sgrid adjusts DNSdata_Omega at every iteration using the force
 balance equation.
 In this case we need the script EccRed.py
 
 ## 2. Run sgrid with:
-DNSdata_adjust = Py0 
+DNSdata_adjust = Py0  
 With this sgrid keeps DNSdata_Omega fixed to whatever we specify in its
 parfile.
 In this case we need the script EccRed_noForceBal.py
@@ -27,5 +27,5 @@ For the 2nd way we use EccRed_noForceBal.py (see Omega-based eccentricity
 reduction in [1910.09690](https://arxiv.org/abs/1910.09690)).
 
 To check that the fit was successful, one needs to plot the fit and the
-original data. This can be done with tgraph which is at
+original data. This can be done with
 [tgraph](https://github.com/wofti/tgraph).
