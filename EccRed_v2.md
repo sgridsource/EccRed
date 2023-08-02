@@ -104,9 +104,9 @@ The values of `MASS`, `OMEGA`, `TIMESKIP` and `D_MIN` are found as follows:
   the orbital separation of our run versus time. For BAM `d-proper` versus
   `time` is in `moving_puncture_distance.lxyz?` located in the BAM output
   directory. For the ETK we have to look at files that contain information
-  about the star locations, e.g. the file volume_integrals-GRMHD.asc
+  about the star locations, e.g. the file volume_integrals-GRMHD.asc.
   From it we then need to generate another file that contains 'distance'
-  versus `time` using the script get_d_from_VolInt.py.
+  versus `time` using the script [get_d_from_VolInt.py](get_d_from_VolInt.py).
 . Looking at the 'distance' versus `time` plot we observe
   that there are some wiggles at early times (due to initial coordinate
   changes), that we do not want to include in the fit. Find when these
