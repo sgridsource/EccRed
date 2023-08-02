@@ -106,7 +106,8 @@ The values of `MASS`, `OMEGA`, `TIMESKIP` and `D_MIN` are found as follows:
   directory. For the ETK we have to look at files that contain information
   about the star locations, e.g. the file volume_integrals-GRMHD.asc
   From it we then need to generate another file that contains 'distance'
-  versus `time`. Looking at the 'distance' versus `time` plot we observe
+  versus `time` using the script get_d_from_VolInt.py.
+. Looking at the 'distance' versus `time` plot we observe
   that there are some wiggles at early times (due to initial coordinate
   changes), that we do not want to include in the fit. Find when these
   wiggles end, this time is the value of `TIMESKIP`. Furthermore, find the
