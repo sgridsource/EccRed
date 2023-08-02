@@ -96,7 +96,7 @@ and `DNSdata_Omega`. This script fits the distance versus time to a simple
 curve. From the curve fit parameters the changes in `DNSdata_rdot`
 and `DNSdata_Omega` are then computed. We invoke the script as follows:
 
-`EccRed_noForceBal.py --Mass MASS --Omega OMEGA --tskip TIMESKIP --dmin D_MIN moving_puncture_distance.lxyz4 > fit.data`
+`EccRed_noForceBal.py --Mass MASS --Omega OMEGA --tskip TIMESKIP --dmin D_MIN -c COL DISTANCE-FILE > fit.data`
 
 The values of `MASS`, `OMEGA`, `TIMESKIP` and `D_MIN` are found as follows:
 
@@ -116,8 +116,13 @@ The values of `MASS`, `OMEGA`, `TIMESKIP` and `D_MIN` are found as follows:
   wiggles end, this time is the value of `TIMESKIP`. Furthermore, find the
   smallest `d-proper` that we want to include in the fit, this gives the
   value of `D_MIN`.
+* For BAM `COL` is equal to 7 and we can directly use e.g.
+  moving_puncture_distance.lxyz6 for DISTANCE-FILE. For the ETK,
+  DISTANCE-FILE is the output of [get_d_from_VolInt.py](get_d_from_VolInt.py)
+  and `COL` is equal to 2.
 
-After invoking the script we need to double check the fit results. These are
+After invoking the script [*EccRed_noForceBal.py*](EccRed_noForceBal.py)
+we need to double check the fit results. These are
 in the file `fit.data`. The 1st column contains time, the 2nd distance
 and the 3rd the fit to the distance. To check the fit quality, plot both
 column 2 versus 1 as well as column 3 versus 1:

@@ -34,7 +34,7 @@ if argc == 0:
   print()
   print("file_path: path to data file")
   print()
-  print("Output in file with: column 0: time, column 1: distance.")
+  print("Output in file with: column 1: time, column 2: distance.")
 
 elif argc != 1:
 
