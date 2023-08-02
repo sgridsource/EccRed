@@ -11,8 +11,9 @@ values of the radial velocity rdot and the orbital angular velocity Omega
 in the initial data.
 
 More info about the old version of the eccentricity reduction procedure (in
-EccRed.py) is in https://arxiv.org/pdf/1507.07100.pdf. The new procedure
-is in the paper about the new SGRID version https://arxiv.org/abs/1910.09690.
+EccRed.py) is in [1507.07100](https://arxiv.org/pdf/1507.07100.pdf).
+The new procedure (in EccRed_noForceBal.py) is in the paper about the new
+SGRID version [1910.09690](https://arxiv.org/abs/1910.09690).
 
 ### Requirements:
 * New version of SGRID code (DNSdata)
@@ -20,7 +21,7 @@ is in the paper about the new SGRID version https://arxiv.org/abs/1910.09690.
 * SGRID parfile needs to have: `DNSdata_adjust = Py0`
 * BAM code or Einstein Toolkit (ETK)
 * BAM parameter file or ETK parameter file
-* Python script **EccRed_noForceBal.py**
+* Python script [**EccRed_noForceBal.py**](EccRed_noForceBal.py)
 
 
 ### Algorithm
@@ -88,7 +89,8 @@ There are few caveats worth noting:
 
 > *Step 4: Find changes in radial velocity and orbital angular velocity*
 
-One can use the provided python script *EccRed_noForceBal.py* to
+One can use the provided python script
+[*EccRed_noForceBal.py*](EccRed_noForceBal.py) to
 find the changes we need to make in the SGRID parameters `DNSdata_rdot`
 and `DNSdata_Omega`. This script fits the distance versus time to a simple
 curve. From the curve fit parameters the changes in `DNSdata_rdot`
@@ -107,7 +109,7 @@ The values of `MASS`, `OMEGA`, `TIMESKIP` and `D_MIN` are found as follows:
   about the star locations, e.g. the file volume_integrals-GRMHD.asc.
   From it we then need to generate another file that contains 'distance'
   versus `time` using the script [get_d_from_VolInt.py](get_d_from_VolInt.py).
-. Looking at the 'distance' versus `time` plot we observe
+* Looking at the 'distance' versus `time` plot we observe
   that there are some wiggles at early times (due to initial coordinate
   changes), that we do not want to include in the fit. Find when these
   wiggles end, this time is the value of `TIMESKIP`. Furthermore, find the
@@ -122,7 +124,7 @@ column 2 versus 1 as well as column 3 versus 1:
 `tgraph.py -c 1:2 fit.data -c 1:3 fit.data`
 
 Make sure the 2nd curve is a good fit to the first.
-(tgraph is at https://github.com/wofti/tgraph)
+([tgraph](https://github.com/wofti/tgraph) is on github as well)
 
 Now, **to find the changes in `DNSdata_rdot` and `DNSdata_Omega`**,
 go the the tail of the file `fit.data` and read the value of `drdot` and
