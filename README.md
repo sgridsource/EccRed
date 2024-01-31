@@ -3,21 +3,25 @@
 ## There are 2 ways to reduce eccentricity:
 
 ## 1. Run sgrid with:
-DNSdata_adjust = forcebalance always  
+DNSdata_adjust = forcebalance always
 With this sgrid adjusts DNSdata_Omega at every iteration using the force
 balance equation.
 In this case we need the script [EccRed.py](EccRed.py)
 
 ## 2. Run sgrid with:
-DNSdata_adjust = Py0  
+DNSdata_adjust = Py0
 With this sgrid keeps DNSdata_Omega fixed to whatever we specify in its
 parfile.
 In this case we need the script [EccRed_noForceBal.py](EccRed_noForceBal.py)
 
-The 2nd way is recommended for low eccentricities, and is described in 
+## Additional information:
+
+The 2nd way is recommended for low eccentricities unless the mass ratio
+is high. The 2nd way is described in
 [EccRed_v2.md](https://github.com/sgridsource/EccRed/blob/main/EccRed_v2.md)
 
-Additional details about the 2 ways are in Ecc-Red-Notes.txt. For either way
+Additional details about the 2 ways are in
+[Ecc-Red-Notes.txt](Ecc-Red-Notes.txt). For either way
 we need scripts to fit the orbital separation to the sinusoidal curve
 d(t) = S0 + A0 t + 0.5 A1 t^2 - (B/omega) cos(omega t + phi).
 
