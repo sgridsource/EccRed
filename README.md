@@ -14,7 +14,7 @@ With this sgrid keeps DNSdata_Omega fixed to whatever we specify in its
 parfile.
 In this case we need the script [EccRed_noForceBal.py](EccRed_noForceBal.py)
 
-## Additional information:
+## Explanation:
 
 The 2nd way is recommended for low eccentricities unless the mass ratio
 is high. The 2nd way is described in
