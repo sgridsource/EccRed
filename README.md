@@ -4,12 +4,14 @@
 
 ## 1. Run sgrid with:
 DNSdata_adjust = forcebalance always
+
 With this sgrid adjusts DNSdata_Omega at every iteration using the force
 balance equation.
 In this case we need the script [EccRed.py](EccRed.py)
 
 ## 2. Run sgrid with:
 DNSdata_adjust = Py0
+
 With this sgrid keeps DNSdata_Omega fixed to whatever we specify in its
 parfile.
 In this case we need the script [EccRed_noForceBal.py](EccRed_noForceBal.py)
