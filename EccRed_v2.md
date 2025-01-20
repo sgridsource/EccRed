@@ -96,7 +96,7 @@ and `DNSdata_Omega`. This script fits the distance versus time to a simple
 curve. From the curve fit parameters the changes in `DNSdata_rdot`
 and `DNSdata_Omega` are then computed. We invoke the script as follows:
 
-`EccRed_noForceBal.py --Mass MASS --Omega OMEGA --tskip TIMESKIP --dmin D_MIN -c COL DISTANCE-FILE > fit.data`
+`EccRed_noForceBal.py --Mass MASS --Omega OMEGA --tskip TIMESKIP --dmin D_MIN -ct TCOL -cc CDCOL -c DCOL DISTANCE-FILE > fit.data`
 
 The values of `MASS`, `OMEGA`, `TIMESKIP` and `D_MIN` are found as follows:
 
@@ -116,10 +116,15 @@ The values of `MASS`, `OMEGA`, `TIMESKIP` and `D_MIN` are found as follows:
   wiggles end, this time is the value of `TIMESKIP`. Furthermore, find the
   smallest `d-proper` that we want to include in the fit, this gives the
   value of `D_MIN`.
-* For BAM `COL` is equal to 7 and we can directly use e.g.
-  moving_puncture_distance.lxyz6 for DISTANCE-FILE. For the ETK,
-  DISTANCE-FILE is the output of [get_d_from_VolInt.py](get_d_from_VolInt.py)
-  and `COL` is equal to 2.
+* `DISTANCE-FILE` is the file that contains the distances vs time.
+* `TCOL`, `CDCOL` and `DCOL` are the file columns (counting from 1) that
+  contain time, coordinate distance, and distance we wish to fit (usually
+  the proper distance).
+* For BAM `TCOL`, `CDCOL`, `DCOL` are columns 9, 8, 7, and we can directly
+  use moving_puncture_distance.lxyz6 for DISTANCE-FILE.
+  For the ETK, DISTANCE-FILE is the output of
+  [get_d_from_VolInt.py](get_d_from_VolInt.py)
+  and `TCOL`, `CDCOL`, `DCOL` are 1, 2, 2.
 
 After invoking the script [*EccRed_noForceBal.py*](EccRed_noForceBal.py)
 we need to double check the fit results. These are

@@ -49,7 +49,7 @@ parser.add_argument('-ct', metavar='TCOL', dest='timecolumn',
         default=9, help='column (counting from 1) in file we use as time')
 parser.add_argument('-cc', metavar='CDCOL', dest='coorddistcolumn',
         default=8, help='column (counting from 1) in file we use as coordinate distance')
-parser.add_argument('-c', metavar='COL', dest='distcolumn',
+parser.add_argument('-c', metavar='DCOL', dest='distcolumn',
         default=7, help='column (counting from 1) in file we use as distance')
 parser.add_argument('file', help='pathname of distance file')
 
