@@ -125,6 +125,8 @@ The values of `MASS`, `OMEGA`, `TIMESKIP` and `D_MIN` are found as follows:
   For the ETK, DISTANCE-FILE is the output of
   [get_d_from_VolInt.py](get_d_from_VolInt.py)
   and `TCOL`, `CDCOL`, `DCOL` are 1, 2, 2.
+  For Nmesh DISTANCE-FILE is center_1_2_distance.t and
+  `TCOL`, `CDCOL`, `DCOL` are 1, 2, 3.
 
 After invoking the script [*EccRed_noForceBal.py*](EccRed_noForceBal.py)
 we need to double check the fit results. These are
