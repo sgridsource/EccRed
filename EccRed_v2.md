@@ -121,7 +121,7 @@ The values of `MASS`, `OMEGA`, `TIMESKIP` and `D_MIN` are found as follows:
   contain time, coordinate distance, and distance we wish to fit (usually
   the proper distance).
 * For BAM `TCOL`, `CDCOL`, `DCOL` are columns 9, 8, 7, and we can directly
-  use moving_puncture_distance.lxyz6 for DISTANCE-FILE.
+  use e.g. moving_puncture_distance.lxyz6 for DISTANCE-FILE.
   For the ETK, DISTANCE-FILE is the output of
   [get_d_from_VolInt.py](get_d_from_VolInt.py)
   and `TCOL`, `CDCOL`, `DCOL` are 1, 2, 2.
