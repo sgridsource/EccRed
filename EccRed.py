@@ -45,6 +45,10 @@ parser.add_argument('--tskip', metavar='TIMESKIP', dest='tskip',
         help='initial time interval to skip')
 parser.add_argument('--dmin', metavar='D_MIN', dest='dmin',
         default=31.0, help='minimum d we read in')
+parser.add_argument('-ct', metavar='TCOL', dest='timecolumn',
+        default=9, help='column (counting from 1) in file we use as time')
+parser.add_argument('-cc', metavar='CDCOL', dest='coorddistcolumn',
+        default=8, help='column (counting from 1) in file we use as coordinate distance')
 parser.add_argument('-c', metavar='COL', dest='distcolumn',
         default=7, help='column (counting from 1) in file we use as distance')
 parser.add_argument('file', help='pathname of distance file')
@@ -62,9 +66,9 @@ print("# Dropping distances below", dmin)
 
 ##################################################################
 # set Columns we use
-tcol = 8
+tcol = int(args.timecolumn) - 1
 dcol = int(args.distcolumn) - 1
-dcoordcol = 7
+dcoordcol = int(args.coorddistcolumn) - 1
 
 print("# Columns (counting from 1) we use:")
 print("# time:", tcol+1, "   distance:", dcol+1, "   r0:", dcoordcol+1)
