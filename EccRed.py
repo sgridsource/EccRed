@@ -77,6 +77,10 @@ print("# time:", tcol+1, "   distance:", dcol+1, "   r0:", dcoordcol+1)
 # load data
 data = np.loadtxt(args.file, comments=['#', '"', '$'])
 
+# filter repeating time entries, e.g., after a restarts
+_, mask = np.unique(data[:,tcol], return_index=True)
+data = data[mask]
+
 # get time data
 tdata = data[:,tcol]
 
