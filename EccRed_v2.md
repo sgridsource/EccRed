@@ -136,8 +136,11 @@ column 2 versus 1 as well as column 3 versus 1:
 
 `tgraph.py -c 1:2 fit.data -c 1:3 fit.data`
 
-Make sure the 2nd curve is a good fit to the first.
-([tgraph](https://github.com/wofti/tgraph) is on github as well)
+Make sure the 2nd curve is a good fit to the first
+([tgraph](https://github.com/wofti/tgraph) is on github as well).
+If the fit is not good, change TIMESKIP (or D_MIN) and re-run the script
+[*EccRed_noForceBal.py*](EccRed_noForceBal.py) until you find values for
+TIMESKIP and D_MIN that produce a good fit.
 
 Now, **to find the changes in `DNSdata_rdot` and `DNSdata_Omega`**,
 go the the tail of the file `fit.data` and read the value of `drdot` and
