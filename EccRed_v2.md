@@ -19,8 +19,8 @@ SGRID version [1910.09690](https://arxiv.org/abs/1910.09690).
 * New version of SGRID code (DNSdata)
 * SGRID parameter file
 * SGRID parfile needs to have: `DNSdata_adjust = Py0`
-* BAM code or Einstein Toolkit (ETK)
-* BAM parameter file or ETK parameter file
+* BAM code, Einstein Toolkit (ETK), or Nmesh
+* BAM parameter file, ETK parameter file, or Nmesh parameter file
 * Python script [**EccRed_noForceBal.py**](EccRed_noForceBal.py)
 
 
@@ -56,7 +56,7 @@ is `parameterfile_n1_n2_n3`. Thus, if our parameter file is
 `bns.par` and the highest resolution is 26x26x26 we will have:
 `bns_26_26_26`.
 
-In order to evolve the initial data using BAM or ETK we need to
+In order to evolve the initial data using BAM, ETK, or Nmesh we need to
 do the following modification:
 
 * Copy `bns.par` to `bns_26_26_26/bns_26_26_26.par`.
@@ -64,7 +64,7 @@ do the following modification:
   `iterate_parameters = yes` to `iterate_parameters = no`.
 
 
-> *Step 3: Run BAM, ETK or Nmesh*
+> *Step 3: Run BAM, ETK, or Nmesh*
 
 Evolve the system using the newly constructed initial data for about 3 orbits.
 There are few caveats worth noting:
