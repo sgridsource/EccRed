@@ -64,7 +64,7 @@ do the following modification:
   `iterate_parameters = yes` to `iterate_parameters = no`.
 
 
-> *Step 3: Run BAM or ETK code*
+> *Step 3: Run BAM, ETK or Nmesh*
 
 Evolve the system using the newly constructed initial data for about 3 orbits.
 There are few caveats worth noting:
@@ -98,7 +98,7 @@ and `DNSdata_Omega` are then computed. We invoke the script as follows:
 
 `EccRed_noForceBal.py --Mass MASS --Omega OMEGA --tskip TIMESKIP --dmin D_MIN -ct TCOL -cc CDCOL -c DCOL DISTANCE-FILE > fit.data`
 
-The values of `MASS`, `OMEGA`, `TIMESKIP` and `D_MIN` are found as follows:
+The values of `MASS`, `OMEGA`, `TIMESKIP`, `D_MIN`, etc. are found as follows:
 
 * The values of `OMEGA` and `MASS` are equal to the values of `Omega` and
   `M_ADM` in `BNSdata_properties.txt` located in `bns_26_26_26` folder.
